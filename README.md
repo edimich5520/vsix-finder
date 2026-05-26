@@ -47,6 +47,18 @@ An open-source extension registry commonly used by VS Code-compatible editors an
 
 ---
 
+## Screenshots
+
+### Home page
+
+![VSIX Finder home page](screenshots/home.png)
+
+### Search results
+
+![VSIX Finder search results](screenshots/search-results.png)
+
+---
+
 ## Requirements
 
 You need **Node.js 18 or newer**.
