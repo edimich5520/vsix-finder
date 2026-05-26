@@ -1,0 +1,14 @@
+{
+  "name": "vsix-finder",
+  "version": "1.0.0",
+  "description": "Search VS Code extension marketplaces and download .vsix packages for VS Code-compatible IDEs.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}
